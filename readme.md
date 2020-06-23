@@ -2,6 +2,8 @@
 
 Custom Control to show the Process Sessions related to the current record on the unified interface
 
+![Banner image](images/banner.png)
+
 
 ## Configuration
 
