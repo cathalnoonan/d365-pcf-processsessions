@@ -4,10 +4,8 @@ export interface IProcessSession {
     name: string;
     startedOn: string;
     completedOn: string;
-    comments: string;
-
-    processId: string;   // _processid_value
-    processName: string; // _processid_value@OData.Community.Display.V1.FormattedValue
+    state: string;
+    status: string;
 }
 
 export enum ProcessSessionType {

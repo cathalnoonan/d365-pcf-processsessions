@@ -3,17 +3,19 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { App, IAppProps } from './components';
 import { IWorkflowService, BackgroundWorkflowService, RealTimeWorkflowService } from './services';
-import createResourceStrings from './strings/resourcestrings';
+import createResourceStrings, { ResourceStrings } from './strings/resourcestrings';
 
 export class ProcessSessions implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
     private container: HTMLDivElement;
     private entityId: string;
     private entityTypeName: string;
+    private resourceStrings: ResourceStrings;
 
     public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container: HTMLDivElement) {
         this.container = container;
         this.assignEntityReference(context);
+        this.resourceStrings = createResourceStrings(context);
     }
 
     public updateView(context: ComponentFramework.Context<IInputs>): void {
@@ -21,6 +23,7 @@ export class ProcessSessions implements ComponentFramework.StandardControl<IInpu
 
         const props: IAppProps = {
             workflowService: this.getWorkflowService(context),
+            resourceStrings: this.resourceStrings,
         };
 
         ReactDOM.render(
@@ -42,13 +45,11 @@ export class ProcessSessions implements ComponentFramework.StandardControl<IInpu
     private getWorkflowService(context: ComponentFramework.Context<IInputs>): IWorkflowService {
         const processType = context.parameters.processType.raw
 
-        const resourceStrings = createResourceStrings(context);
-
         if (processType === "BackgroundWorkflows") {
-            return new BackgroundWorkflowService(this.entityTypeName, this.entityId, context, resourceStrings);
+            return new BackgroundWorkflowService(this.entityTypeName, this.entityId, context, this.resourceStrings);
         }
 
-        return new RealTimeWorkflowService(this.entityTypeName, this.entityId, context, resourceStrings);
+        return new RealTimeWorkflowService(this.entityTypeName, this.entityId, context, this.resourceStrings);
     }
 
 }

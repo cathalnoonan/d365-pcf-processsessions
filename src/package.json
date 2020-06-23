@@ -9,9 +9,9 @@
     "enableCustomWebpackConfig": "node enableCustomWebpackConfig.js"
   },
   "dependencies": {
-    "@fluentui/react": "^7.121.2",
     "@types/node": "^10.12.18",
     "@types/powerapps-component-framework": "^1.2.0",
+    "office-ui-fabric-react": "^7.121.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
