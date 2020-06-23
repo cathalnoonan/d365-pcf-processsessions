@@ -1,0 +1,23 @@
+{
+  "name": "pcf-processsessions",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "pcf-scripts build",
+    "clean": "pcf-scripts clean",
+    "rebuild": "pcf-scripts rebuild",
+    "start": "pcf-scripts start",
+    "enableCustomWebpackConfig": "node enableCustomWebpackConfig.js"
+  },
+  "dependencies": {
+    "@fluentui/react": "^7.121.2",
+    "@types/node": "^10.12.18",
+    "@types/powerapps-component-framework": "^1.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.38",
+    "pcf-scripts": "^1",
+    "pcf-start": "^1"
+  }
+}
