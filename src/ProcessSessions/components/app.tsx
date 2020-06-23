@@ -4,8 +4,9 @@ import { IProcessSession } from '../models';
 import { ResourceStrings } from '../strings/resourcestrings';
 
 import { DetailsList, SelectionMode, IColumn } from 'office-ui-fabric-react/lib/DetailsList';
-import { Button } from 'office-ui-fabric-react/lib/Button';
+import { PrimaryButton  } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
+import { Spinner } from 'office-ui-fabric-react/lib/Spinner';
 
 interface IAppProps {
     workflowService: IWorkflowService;
@@ -17,10 +18,14 @@ const App = (props: IAppProps) => {
     const { workflowService, resourceStrings } = props;
 
     const [sessions, setSessions] = React.useState<IProcessSession[]>([]);
+    const [loading, setLoading] = React.useState<boolean>(true);
 
     const getProcessSessions = () => {
-        props.workflowService.getSessions()
-            .then(setSessions);
+        Promise.resolve()
+            .then(() => setLoading(true))
+            .then(() => props.workflowService.getSessions())
+            .then(sessions => setSessions(sessions))
+            .finally(() => setLoading(false));
     }
 
     React.useEffect(getProcessSessions, []);
@@ -29,10 +34,18 @@ const App = (props: IAppProps) => {
         <div>
             <div style={{ display: 'flex' }}>
                 <div style={{ flexGrow: 1 }}>
-                    <Label style={{ lineHeight: '22px' }}>{workflowService.title}</Label>
+                    <Label style={{ lineHeight: '22px' }}>
+                        {workflowService.title}
+                    </Label>
                 </div>
                 <div>
-                    <Button onClick={getProcessSessions}>{resourceStrings.Refresh}</Button>
+                    <PrimaryButton  onClick={getProcessSessions}>
+                        {
+                            loading 
+                            ? <Spinner />
+                            : resourceStrings.Refresh
+                        }
+                    </PrimaryButton>
                 </div>
             </div>
 

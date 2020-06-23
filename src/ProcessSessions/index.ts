@@ -23,9 +23,6 @@ export class ProcessSessions implements ComponentFramework.StandardControl<IInpu
     }
 
     public updateView(context: ComponentFramework.Context<IInputs>): void {
-        //this.assignEntityReference(context);
-
-        //this.render();
     }
 
     public destroy(): void {
