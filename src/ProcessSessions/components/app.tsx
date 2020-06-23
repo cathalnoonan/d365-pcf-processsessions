@@ -9,13 +9,19 @@ import { Label } from 'office-ui-fabric-react/lib/Label';
 import { Spinner } from 'office-ui-fabric-react/lib/Spinner';
 
 interface IAppProps {
+    entityId: string;
     workflowService: IWorkflowService;
     resourceStrings: ResourceStrings;
 }
 
 const App = (props: IAppProps) => {
 
-    const { workflowService, resourceStrings } = props;
+    const { entityId, workflowService, resourceStrings } = props;
+
+    // If the record is not created, don't show the table
+    if (!entityId) {
+        return <div>{resourceStrings.PleaseSaveAndRefresh}</div>;
+    }
 
     const [sessions, setSessions] = React.useState<IProcessSession[]>([]);
     const [loading, setLoading] = React.useState<boolean>(true);
@@ -23,10 +29,10 @@ const App = (props: IAppProps) => {
     const getProcessSessions = () => {
         Promise.resolve()
             .then(() => setLoading(true))
-            .then(() => props.workflowService.getSessions())
+            .then(() => workflowService.getSessions())
             .then(sessions => setSessions(sessions))
             .finally(() => setLoading(false));
-    }
+    };
 
     React.useEffect(getProcessSessions, []);
 

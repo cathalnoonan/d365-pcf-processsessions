@@ -30,6 +30,9 @@ export class ResourceStrings {
     get CompletedOn(): string {
         return this.getString('CompletedOn_Key');
     }
+    get PleaseSaveAndRefresh(): string { 
+        return this.getString('PleaseSaveAndRefresh_Key');
+    }
 
     private getString(key: string): string {
         return this.context.resources.getString(key);

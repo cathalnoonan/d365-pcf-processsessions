@@ -111,4 +111,7 @@
     <data name="CompletedOn_Key" xml:space="preserve">
         <value>Completed On</value>
     </data>
+    <data name="PleaseSaveAndRefresh_Key" xml:space="preserve">
+        <value>Please Save and Refresh to see the Process Sessions</value>
+    </data>
 </root>

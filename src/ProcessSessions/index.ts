@@ -31,6 +31,7 @@ export class ProcessSessions implements ComponentFramework.StandardControl<IInpu
 
     private render(): void {
         const props: IAppProps = {
+            entityId: this.entityId,
             workflowService: this.getWorkflowService(this.context),
             resourceStrings: this.resourceStrings,
         };
