@@ -13,29 +13,25 @@ export class ResourceStrings {
         return this.getString('ProcessType_RealTimeWorkflows_Display_Key');
     }
     get Refresh(): string {
-        return this.getString('Refresh');
+        return this.getString('Refresh_Key');
     }
     get Name(): string {
-        return this.getString('Name');
+        return this.getString('Name_Key');
     }
     get State(): string {
-        return this.getString('State');
+        return this.getString('State_Key');
     }
     get Status(): string {
-        return this.getString('Status');
+        return this.getString('Status_Key');
     }
     get StartedOn(): string {
-        return this.getString('StartedOn');
+        return this.getString('StartedOn_Key');
     }
     get CompletedOn(): string {
-        return this.getString('CompletedOn');
+        return this.getString('CompletedOn_Key');
     }
 
     private getString(key: string): string {
         return this.context.resources.getString(key);
     }
-}
-
-export default function createResourceStrings(context: ComponentFramework.Context<IInputs>) : ResourceStrings {
-    return new ResourceStrings(context);
 }

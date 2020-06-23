@@ -93,23 +93,22 @@
     <data name="ProcessType_RealTimeWorkflows_Desc_Key" xml:space="preserve">
         <value>Displays Real Time Workflows in the control.</value>
     </data>
-    <data name="Refresh" xml:space="preserve">
+    <data name="Refresh_Key" xml:space="preserve">
         <value>Refresh</value>
     </data>
-
-    <data name="Name" xml:space="preserve">
+    <data name="Name_Key" xml:space="preserve">
         <value>Name</value>
     </data>
-    <data name="State" xml:space="preserve">
+    <data name="State_Key" xml:space="preserve">
         <value>State</value>
     </data>
-    <data name="Status" xml:space="preserve">
+    <data name="Status_Key" xml:space="preserve">
         <value>Status</value>
     </data>
-    <data name="StartedOn" xml:space="preserve">
+    <data name="StartedOn_Key" xml:space="preserve">
         <value>Started On</value>
     </data>
-    <data name="CompletedOn" xml:space="preserve">
+    <data name="CompletedOn_Key" xml:space="preserve">
         <value>Completed On</value>
     </data>
 </root>

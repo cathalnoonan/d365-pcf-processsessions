@@ -3,7 +3,7 @@ import { IWorkflowService } from '../services';
 import { IProcessSession } from '../models';
 import { ResourceStrings } from '../strings/resourcestrings';
 
-import { DetailsList, SelectionMode } from 'office-ui-fabric-react/lib/DetailsList';
+import { DetailsList, SelectionMode, IColumn } from 'office-ui-fabric-react/lib/DetailsList';
 import { Button } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 
@@ -13,6 +13,8 @@ interface IAppProps {
 }
 
 const App = (props: IAppProps) => {
+
+    const { workflowService, resourceStrings } = props;
 
     const [sessions, setSessions] = React.useState<IProcessSession[]>([]);
 
@@ -27,27 +29,38 @@ const App = (props: IAppProps) => {
         <div>
             <div style={{ display: 'flex' }}>
                 <div style={{ flexGrow: 1 }}>
-                    <Label style={{ lineHeight: '23px' }}>{props.workflowService.title}</Label>
+                    <Label style={{ lineHeight: '22px' }}>{workflowService.title}</Label>
                 </div>
                 <div>
-                    <Button onClick={getProcessSessions}>{props.resourceStrings.Refresh}</Button>
+                    <Button onClick={getProcessSessions}>{resourceStrings.Refresh}</Button>
                 </div>
             </div>
 
             <DetailsList
                 columns={[
-                    { name: props.resourceStrings.Name, key: 'name', fieldName: 'name', minWidth: 150, maxWidth: 300, isResizable: true },
-                    { name: props.resourceStrings.State, key: 'state', fieldName: 'state', minWidth: 75, maxWidth: 75, isResizable: false },
-                    { name: props.resourceStrings.Status, key: 'status', fieldName: 'status', minWidth: 75, maxWidth: 75, isResizable: false },
-                    { name: props.resourceStrings.StartedOn, key: 'startedOn', fieldName: 'startedOn', minWidth: 100, maxWidth: 100, isResizable: false },
-                    { name: props.resourceStrings.CompletedOn, key: 'completedOn', fieldName: 'completedOn', minWidth: 100, maxWidth: 100, isResizable: false },
+                    createColumn(resourceStrings.Name, 'name', 120),
+                    createColumn(resourceStrings.State, 'state', 85),
+                    createColumn(resourceStrings.Status, 'status', 85),
+                    createColumn(resourceStrings.StartedOn, 'startedOn', 105),
+                    createColumn(resourceStrings.CompletedOn, 'completedOn', 105),
                 ]}
                 items={sessions}
-                onItemInvoked={props.workflowService.openPopUpWindow}
+                onItemInvoked={workflowService.openPopUpWindow}
                 selectionMode={SelectionMode.none}
             />
+
         </div>
     );
+}
+
+function createColumn(label: string, valueFieldName: string, minWidth: number): IColumn {
+    return { 
+        name: label,
+        key: valueFieldName,
+        fieldName: valueFieldName,
+        minWidth,
+        isResizable: true, 
+    }
 }
 
 export {
