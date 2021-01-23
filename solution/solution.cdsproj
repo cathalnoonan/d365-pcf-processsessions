@@ -17,11 +17,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <SolutionPackageType>Managed</SolutionPackageType>
+    <Name>processessions</Name>
+    <SolutionPackageType>Both</SolutionPackageType>
     <SolutionPackageMapFilePath>src\map.xml</SolutionPackageMapFilePath>
+    <SolutionPackageZipFilePath>$(OutputPath)\$(Name).zip</SolutionPackageZipFilePath>
   </PropertyGroup>
   
   <ItemGroup>
+    <!-- %UserProfile%\.nuget\packages\microsoft.powerapps.msbuild.solution\1.4.4\ -->
     <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.*" />
   </ItemGroup>
   
@@ -39,7 +42,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\src\d365-pcf-processessions.pcfproj" />
+    <ProjectReference Include="..\control\control.pcfproj" />
   </ItemGroup>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
