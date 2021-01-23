@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Name>processessions</Name>
+    <Name>processsessions</Name>
     <SolutionPackageType>Both</SolutionPackageType>
     <SolutionPackageMapFilePath>src\map.xml</SolutionPackageMapFilePath>
     <SolutionPackageZipFilePath>$(OutputPath)\$(Name).zip</SolutionPackageZipFilePath>
