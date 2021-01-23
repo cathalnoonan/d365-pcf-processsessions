@@ -1,6 +1,1 @@
-import { App, IAppProps } from './app';
-
-export {
-    App,
-    IAppProps,
-}
+export * from './app';

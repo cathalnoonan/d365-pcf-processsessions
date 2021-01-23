@@ -1,5 +1,1 @@
-import { IProcessSession, ProcessSessionType } from './iprocesssession';
-
-export {
-    IProcessSession, ProcessSessionType,
-}
+export * from './iprocesssession';

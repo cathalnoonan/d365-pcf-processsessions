@@ -3,7 +3,7 @@ import { IWorkflowService } from "./";
 import { IProcessSession, ProcessSessionType } from '../models';
 import { ResourceStrings } from "../strings/resourcestrings";
 
-export default class RealTimeWorkflowService implements IWorkflowService {
+export class RealTimeWorkflowService implements IWorkflowService {
 
     public title: string;
 

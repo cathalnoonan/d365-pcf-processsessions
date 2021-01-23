@@ -4,17 +4,17 @@ import { IProcessSession } from '../models';
 import { ResourceStrings } from '../strings/resourcestrings';
 
 import { DetailsList, SelectionMode, IColumn } from 'office-ui-fabric-react/lib/DetailsList';
-import { PrimaryButton  } from 'office-ui-fabric-react/lib/Button';
+import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 import { Label } from 'office-ui-fabric-react/lib/Label';
 import { Spinner } from 'office-ui-fabric-react/lib/Spinner';
 
-interface IAppProps {
+export interface IAppProps {
     entityId: string;
     workflowService: IWorkflowService;
     resourceStrings: ResourceStrings;
 }
 
-const App = (props: IAppProps) => {
+export const App = (props: IAppProps) => {
 
     const { entityId, workflowService, resourceStrings } = props;
 
@@ -45,11 +45,11 @@ const App = (props: IAppProps) => {
                     </Label>
                 </div>
                 <div>
-                    <PrimaryButton  onClick={getProcessSessions}>
+                    <PrimaryButton onClick={getProcessSessions}>
                         {
-                            loading 
-                            ? <Spinner />
-                            : resourceStrings.Refresh
+                            loading
+                                ? <Spinner />
+                                : resourceStrings.Refresh
                         }
                     </PrimaryButton>
                 </div>
@@ -73,16 +73,11 @@ const App = (props: IAppProps) => {
 }
 
 function createColumn(label: string, valueFieldName: string, minWidth: number): IColumn {
-    return { 
+    return {
         name: label,
         key: valueFieldName,
         fieldName: valueFieldName,
         minWidth,
-        isResizable: true, 
+        isResizable: true,
     }
-}
-
-export {
-    App,
-    IAppProps
 }

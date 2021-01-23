@@ -3,7 +3,7 @@ import { IInputs } from "../generated/ManifestTypes";
 import { IProcessSession, ProcessSessionType } from '../models';
 import { ResourceStrings } from "../strings/resourcestrings";
 
-export default class BackgroundWorkflowService implements IWorkflowService {
+export class BackgroundWorkflowService implements IWorkflowService {
 
     public title: string;
 
@@ -36,7 +36,8 @@ export default class BackgroundWorkflowService implements IWorkflowService {
                 completedOn: entity['completedon@OData.Community.Display.V1.FormattedValue'] || '',
                 state: entity['statecode@OData.Community.Display.V1.FormattedValue'] || '',
                 status: entity['statuscode@OData.Community.Display.V1.FormattedValue'] || '',
-            }));
+            }))
+            .filter(entity => entity.name !== '')
     }
 
 }
