@@ -17,10 +17,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Name>processsessions</Name>
     <SolutionPackageType>Both</SolutionPackageType>
-    <SolutionPackageMapFilePath>src\map.xml</SolutionPackageMapFilePath>
-    <SolutionPackageZipFilePath>$(OutputPath)\$(Name).zip</SolutionPackageZipFilePath>
+    <SolutionPackageZipFilePath>dist\processsessions.zip</SolutionPackageZipFilePath>
   </PropertyGroup>
   
   <ItemGroup>

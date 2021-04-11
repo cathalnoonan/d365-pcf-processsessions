@@ -1,40 +1,40 @@
-import * as React from 'react';
-import { IWorkflowService } from '../services';
-import { IProcessSession } from '../models';
-import { ResourceStrings } from '../strings/resourcestrings';
+import * as React from 'react'
+import { IWorkflowService } from '../services'
+import { IProcessSession } from '../models'
+import { ResourceStrings } from '../strings/resourcestrings'
 
-import { DetailsList, SelectionMode, IColumn } from 'office-ui-fabric-react/lib/DetailsList';
-import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
-import { Label } from 'office-ui-fabric-react/lib/Label';
-import { Spinner } from 'office-ui-fabric-react/lib/Spinner';
+import { DetailsList, SelectionMode, IColumn } from '@fluentui/react/lib/DetailsList'
+import { PrimaryButton } from '@fluentui/react/lib/Button'
+import { Label } from '@fluentui/react/lib/Label'
+import { Spinner } from '@fluentui/react/lib/Spinner'
 
 export interface IAppProps {
-    entityId: string;
-    workflowService: IWorkflowService;
-    resourceStrings: ResourceStrings;
+    entityId: string
+    workflowService: IWorkflowService
+    resourceStrings: ResourceStrings
 }
 
 export const App = (props: IAppProps) => {
 
-    const { entityId, workflowService, resourceStrings } = props;
+    const { entityId, workflowService, resourceStrings } = props
 
     // If the record is not created, don't show the table
     if (!entityId) {
-        return <div>{resourceStrings.PleaseSaveAndRefresh}</div>;
+        return <div>{resourceStrings.PleaseSaveAndRefresh}</div>
     }
 
-    const [sessions, setSessions] = React.useState<IProcessSession[]>([]);
-    const [loading, setLoading] = React.useState<boolean>(true);
+    const [sessions, setSessions] = React.useState<IProcessSession[]>([])
+    const [loading, setLoading] = React.useState<boolean>(true)
 
     const getProcessSessions = () => {
         Promise.resolve()
             .then(() => setLoading(true))
             .then(() => workflowService.getSessions())
             .then(sessions => setSessions(sessions))
-            .finally(() => setLoading(false));
-    };
+            .finally(() => setLoading(false))
+    }
 
-    React.useEffect(getProcessSessions, []);
+    React.useEffect(getProcessSessions, [])
 
     return (
         <div>
@@ -69,7 +69,7 @@ export const App = (props: IAppProps) => {
             />
 
         </div>
-    );
+    )
 }
 
 function createColumn(label: string, valueFieldName: string, minWidth: number): IColumn {

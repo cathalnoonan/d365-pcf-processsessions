@@ -1,11 +1,11 @@
-import { IInputs } from "../generated/ManifestTypes";
-import { IWorkflowService } from "./";
-import { IProcessSession, ProcessSessionType } from '../models';
-import { ResourceStrings } from "../strings/resourcestrings";
+import { IInputs } from '../generated/ManifestTypes'
+import { IWorkflowService } from './'
+import { IProcessSession, ProcessSessionType } from '../models'
+import { ResourceStrings } from '../strings/resourcestrings'
 
 export class RealTimeWorkflowService implements IWorkflowService {
 
-    public title: string;
+    public title: string
 
     constructor(
         private entityTypeName: string,
@@ -13,19 +13,21 @@ export class RealTimeWorkflowService implements IWorkflowService {
         private context: ComponentFramework.Context<IInputs>,
         resourceStrings: ResourceStrings
     ) {
-        this.title = resourceStrings.RealTimeWorkflows;
+        this.title = resourceStrings.RealTimeWorkflows
     }
 
     public openPopUpWindow(item: IProcessSession): void {
-        const url = window.location.origin + 
-            `/sfa/workflowsession/edit.aspx?id={${item.id}}&_CreateFromType=2&_CreateFromId=%7b25A45522-80B4-EA11-A812-000D3A26D722%7d`;
+        const clientUrl = Xrm.Utility.getGlobalContext().getClientUrl()
+        
+        const url = clientUrl +
+            `/sfa/workflowsession/edit.aspx?id={${item.id}}&_CreateFromType=2&_CreateFromId=%7b25A45522-80B4-EA11-A812-000D3A26D722%7d`
 
-        window.open(url, '_blank');
+        window.open(url, '_blank')
     }
 
     async getSessions(): Promise<IProcessSession[]> {
-        const options = `?$filter=_regardingobjectid_value eq '${this.entityId}'&$orderby=createdon desc`;
-        const { entities } = await this.context.webAPI.retrieveMultipleRecords('processsession', options);
+        const options = `?$filter=_regardingobjectid_value eq '${this.entityId}'&$orderby=createdon desc`
+        const { entities } = await this.context.webAPI.retrieveMultipleRecords('processsession', options)
 
         return entities
             .filter(entity => entity['_regardingobjectid_value@Microsoft.Dynamics.CRM.lookuplogicalname'] === this.entityTypeName)
@@ -37,7 +39,7 @@ export class RealTimeWorkflowService implements IWorkflowService {
                 completedOn: entity['completedon@OData.Community.Display.V1.FormattedValue'] || '',
                 state: entity['statecode@OData.Community.Display.V1.FormattedValue'] || '',
                 status: entity['statuscode@OData.Community.Display.V1.FormattedValue'] || '',
-            }));
+            }))
     }
 
 }

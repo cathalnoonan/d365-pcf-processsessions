@@ -1,7 +1,7 @@
-import { IProcessSession } from "../models";
+import { IProcessSession } from '../models'
 
 export interface IWorkflowService {
-    title: string;
+    title: string
     getSessions: () => Promise<IProcessSession[]>
-    openPopUpWindow(item: IProcessSession): void;
+    openPopUpWindow(item: IProcessSession): void
 }

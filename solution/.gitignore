@@ -3,3 +3,4 @@
 # msbuild output directories
 /bin
 /obj
+/dist

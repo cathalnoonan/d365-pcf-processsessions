@@ -1,11 +1,11 @@
 export interface IProcessSession {
-    type: ProcessSessionType,
-    id: string;
-    name: string;
-    startedOn: string;
-    completedOn: string;
-    state: string;
-    status: string;
+    type: ProcessSessionType
+    id: string
+    name: string
+    startedOn: string
+    completedOn: string
+    state: string
+    status: string
 }
 
 export enum ProcessSessionType {

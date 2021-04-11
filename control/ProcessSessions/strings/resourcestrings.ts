@@ -1,4 +1,4 @@
-import { IInputs } from "../generated/ManifestTypes";
+import { IInputs } from '../generated/ManifestTypes'
 
 export class ResourceStrings {
     constructor (
@@ -7,34 +7,34 @@ export class ResourceStrings {
     }
 
     get BackgroundWorkflows(): string {
-        return this.getString('ProcessType_BackgroundWorkflows_Display_Key');
+        return this.getString('ProcessType_BackgroundWorkflows_Display_Key')
     }
     get RealTimeWorkflows(): string {
-        return this.getString('ProcessType_RealTimeWorkflows_Display_Key');
+        return this.getString('ProcessType_RealTimeWorkflows_Display_Key')
     }
     get Refresh(): string {
-        return this.getString('Refresh_Key');
+        return this.getString('Refresh_Key')
     }
     get Name(): string {
-        return this.getString('Name_Key');
+        return this.getString('Name_Key')
     }
     get State(): string {
-        return this.getString('State_Key');
+        return this.getString('State_Key')
     }
     get Status(): string {
-        return this.getString('Status_Key');
+        return this.getString('Status_Key')
     }
     get StartedOn(): string {
-        return this.getString('StartedOn_Key');
+        return this.getString('StartedOn_Key')
     }
     get CompletedOn(): string {
-        return this.getString('CompletedOn_Key');
+        return this.getString('CompletedOn_Key')
     }
     get PleaseSaveAndRefresh(): string { 
-        return this.getString('PleaseSaveAndRefresh_Key');
+        return this.getString('PleaseSaveAndRefresh_Key')
     }
 
     private getString(key: string): string {
-        return this.context.resources.getString(key);
+        return this.context.resources.getString(key)
     }
 }
