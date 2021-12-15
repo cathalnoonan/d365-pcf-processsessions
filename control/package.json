@@ -20,7 +20,7 @@
     "@types/react": "<17.0.0",
     "@types/react-dom": "<17.0.0",
     "@types/xrm": "^9.0.38",
-    "pcf-scripts": "1.5.5",
-    "pcf-start": "1.5.5"
+    "pcf-scripts": "1.9.9",
+    "pcf-start": "1.9.9"
   }
 }
