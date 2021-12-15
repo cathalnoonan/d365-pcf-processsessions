@@ -46,19 +46,14 @@ The following configuration values are required to render the control
 | Process Type | Type of process sessions to include in the control |
 
 
---
+---
 
 ## Building
 
-An important note about building the control is that is uses yarn
-
-Yarn can be installed by running the command
-> npm install -g yarn
-
 The solution can be built by double clicking the `build.bat` file at the root of the repository
-- This will install the npm dependencies using `yarn`
-- Then it will build the solution (which will in turn build the control)
-- The resulting solution(s) will be built to `solution\dist\` as zip file(s)
+- This will install the npm dependencies using `npm`
+- Then it will build the solution (which will in turn build the control) using `dotnet`
+- The resulting solution(s) will be built to `dist` in the repo root as a zip file
 
 ---
 
