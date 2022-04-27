@@ -8,7 +8,6 @@
   <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.props" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Solution.props')" />
 
   <PropertyGroup>
-    <Name>SecurityProfileManager</Name>
     <ProjectGuid>1c4445f3-08f3-4664-b2b7-1ce07dd174fd</ProjectGuid>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <!--Remove TargetFramework when this is available in 16.1-->
@@ -18,12 +17,9 @@
   
   <PropertyGroup>
     <SolutionRootPath>src</SolutionRootPath>
-    <SolutionPackageType>Managed</SolutionPackageType>
-    <SolutionPackageZipFilePath>..\dist\$(Name).zip</SolutionPackageZipFilePath>
   </PropertyGroup>
   
   <ItemGroup>
-    <!-- %UserProfile%\.nuget\packages\microsoft.powerapps.msbuild.solution\1.4.4\ -->
     <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.*" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
