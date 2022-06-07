@@ -1,5 +1,7 @@
 # D365 PCF - Process Sessions
 
+[![Build](https://github.com/cathalnoonan/d365-pcf-processsessions/actions/workflows/BUILD.yml/badge.svg)](https://github.com/cathalnoonan/d365-pcf-processsessions/actions/workflows/BUILD.yml)
+
 Custom Control to show the Process Sessions related to the current record on the unified interface
 
 Double clicking on a record in the grid will open the details of that process session
