@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
   <control namespace="Cathal" constructor="ProcessSessions" display-name-key="ProcessSessions_Display_Key" description-key="ProcessSessions_Desc_Key" control-type="standard"
-           version="1.1.2">
+           version="1.9.9">
     
     <property name="field" display-name-key="Field_Display_Key" description-key="Field_Desc_Key" of-type-group="any" usage="bound" required="true" />
-
+    
+    <!-- Entity reference parameters -->
+    <property name="entityId" display-name-key="entityId_Display_Key" description-key="entityId_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="entityLogicalName" display-name-key="entityLogicalName_Display_Key" description-key="entityLogicalName_Desc_Key" of-type="SingleLine.Text" usage="input" required="true" />
+    
     <type-group name="any">
         <type>Currency</type>
         <type>DateAndTime.DateAndTime</type>
@@ -45,8 +49,8 @@
     
     <resources>
       <code path="index.ts" order="1"/>
-      <resx path="strings/ProcessSessions.1030.resx" version="1.1.2" />
-      <resx path="strings/ProcessSessions.1033.resx" version="1.1.2" />
+      <resx path="strings/ProcessSessions.1030.resx" version="1.9.9" />
+      <resx path="strings/ProcessSessions.1033.resx" version="1.9.9" />
     </resources>
     
     <feature-usage>
