@@ -75,6 +75,18 @@
     <data name="Field_Desc_Key" xml:space="preserve">
         <value>Felt, der bruger kontrollen</value>
     </data>
+    <data name="entityId_Display_Key" xml:space="preserve">
+        <value>Entity ID</value>
+    </data>
+    <data name="entityId_Desc_Key" xml:space="preserve">
+        <value>Indstil denne værdi til enhedens primære nøglefelt (felt, der indeholder GUID- eller UNIQUEIDENTIFIER-værdien).</value>
+    </data>
+    <data name="entityLogicalName_Display_Key" xml:space="preserve">
+        <value>Entity Logical Name</value>
+    </data>
+    <data name="entityLogicalName_Desc_Key" xml:space="preserve">
+        <value>Indtast det logiske navn på enheden her.</value>
+    </data>
     <data name="ProcessType_Display_Key" xml:space="preserve">
         <value>Type</value>
     </data>

@@ -21,6 +21,7 @@ export class ProcessSessions implements ComponentFramework.StandardControl<IInpu
     }
     
     public updateView(context: ComponentFramework.Context<IInputs>): void {
+        this.assignEntityReference(context)
         this.render()
     }
 
@@ -42,10 +43,8 @@ export class ProcessSessions implements ComponentFramework.StandardControl<IInpu
     }
 
     private assignEntityReference(context: ComponentFramework.Context<IInputs>): void {
-        // TODO: Remove cast to <any>
-        const { entityId, entityTypeName } = (<any>context).page
-        this.entityId = entityId
-        this.entityTypeName = entityTypeName
+        this.entityId = context.parameters.entityId?.raw!
+        this.entityTypeName = context.parameters.entityLogicalName?.raw!
     }
 
     private getWorkflowService(context: ComponentFramework.Context<IInputs>): IWorkflowService {

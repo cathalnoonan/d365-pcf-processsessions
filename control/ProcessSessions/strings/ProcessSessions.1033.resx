@@ -75,6 +75,18 @@
     <data name="Field_Desc_Key" xml:space="preserve">
         <value>Field that will use the control</value>
     </data>
+    <data name="entityId_Display_Key" xml:space="preserve">
+        <value>Entity ID</value>
+    </data>
+    <data name="entityId_Desc_Key" xml:space="preserve">
+        <value>Set this value to the primary key field of the entity (field containing the GUID or UNIQUEIDENTIFIER value).</value>
+    </data>
+    <data name="entityLogicalName_Display_Key" xml:space="preserve">
+        <value>Entity Logical Name</value>
+    </data>
+    <data name="entityLogicalName_Desc_Key" xml:space="preserve">
+        <value>Type the logical name of the entity here.</value>
+    </data>
     <data name="ProcessType_Display_Key" xml:space="preserve">
         <value>Process Type</value>
     </data>
