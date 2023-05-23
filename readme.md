@@ -1,6 +1,7 @@
 # D365 PCF - Process Sessions
 
 [![Build](https://github.com/cathalnoonan/d365-pcf-processsessions/actions/workflows/BUILD.yml/badge.svg)](https://github.com/cathalnoonan/d365-pcf-processsessions/actions/workflows/BUILD.yml)
+[![Github All Releases](https://img.shields.io/github/downloads/cathalnoonan/d365-pcf-processsessions/total.svg)]()
 
 Custom Control to show the Process Sessions related to the current record on the unified interface
 
