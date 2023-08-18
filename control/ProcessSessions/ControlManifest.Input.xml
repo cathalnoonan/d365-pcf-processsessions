@@ -1,33 +1,28 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest>
-  <control namespace="Cathal" constructor="ProcessSessions" display-name-key="ProcessSessions_Display_Key" description-key="ProcessSessions_Desc_Key" control-type="standard"
-           version="2.0.0">
-    
+  <control namespace="Cathal" constructor="ProcessSessions" display-name-key="ProcessSessions_Display_Key" description-key="ProcessSessions_Desc_Key" control-type="standard" version="2.0.0">
     <property name="field" display-name-key="Field_Display_Key" description-key="Field_Desc_Key" of-type-group="any" usage="bound" required="true" />
-    
     <!-- Entity reference parameters -->
     <property name="entityId" display-name-key="entityId_Display_Key" description-key="entityId_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="entityLogicalName" display-name-key="entityLogicalName_Display_Key" description-key="entityLogicalName_Desc_Key" of-type="SingleLine.Text" usage="input" required="true" />
-    
     <type-group name="any">
-        <type>Currency</type>
-        <type>DateAndTime.DateAndTime</type>
-        <type>DateAndTime.DateOnly</type>
-        <type>Decimal</type>
-        <type>Enum</type>
-        <type>FP</type>
-        <type>Multiple</type>
-        <type>OptionSet</type>
-        <type>SingleLine.Email</type>
-        <type>SingleLine.Phone</type>
-        <type>SingleLine.Text</type>
-        <type>SingleLine.TextArea</type>
-        <type>SingleLine.Ticker</type>
-        <type>SingleLine.URL</type>
-        <type>TwoOptions</type>
-        <type>Whole.None</type>
-
-        <!--
+      <type>Currency</type>
+      <type>DateAndTime.DateAndTime</type>
+      <type>DateAndTime.DateOnly</type>
+      <type>Decimal</type>
+      <type>Enum</type>
+      <type>FP</type>
+      <type>Multiple</type>
+      <type>OptionSet</type>
+      <type>SingleLine.Email</type>
+      <type>SingleLine.Phone</type>
+      <type>SingleLine.Text</type>
+      <type>SingleLine.TextArea</type>
+      <type>SingleLine.Ticker</type>
+      <type>SingleLine.URL</type>
+      <type>TwoOptions</type>
+      <type>Whole.None</type>
+      <!--
         <type>Whole.Duration</type>
         <type>Whole.Timezone</type>
         <type>Whole.Language</type>
@@ -41,22 +36,18 @@
         <type>Status Reason</type>
         -->
     </type-group>
-
     <property name="processType" display-name-key="ProcessType_Display_Key" description-key="ProcessType_Desc_Key" of-type="Enum" usage="input" required="true" default-value="BackgroundWorkflows">
-        <value name="BackgroundWorkflows" display-name-key="ProcessType_BackgroundWorkflows_Display_Key" description-key="ProcessType_BackgroundWorkflows_Desc_Key">BackgroundWorkflows</value>
-        <value name="RealTimeWorkflows" display-name-key="ProcessType_RealTimeWorkflows_Display_Key" description-key="ProcessType_RealTimeWorkflows_Desc_Key">RealTimeWorkflows</value>
+      <value name="BackgroundWorkflows" display-name-key="ProcessType_BackgroundWorkflows_Display_Key" description-key="ProcessType_BackgroundWorkflows_Desc_Key">BackgroundWorkflows</value>
+      <value name="RealTimeWorkflows" display-name-key="ProcessType_RealTimeWorkflows_Display_Key" description-key="ProcessType_RealTimeWorkflows_Desc_Key">RealTimeWorkflows</value>
     </property>
-    
     <resources>
-      <code path="index.ts" order="1"/>
+      <code path="index.ts" order="1" />
       <resx path="strings/ProcessSessions.1030.resx" version="2.0.0" />
       <resx path="strings/ProcessSessions.1033.resx" version="2.0.0" />
     </resources>
-    
     <feature-usage>
       <uses-feature name="Utility" required="true" />
       <uses-feature name="WebAPI" required="true" />
     </feature-usage>
-    
   </control>
 </manifest>
