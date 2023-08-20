@@ -4,7 +4,7 @@
 /node_modules
 
 # generated directory
-**/generated
+#**/generated
 
 # output directory
 /out
@@ -12,3 +12,14 @@
 # msbuild output directories
 /bin
 /obj
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# PCF on mac creates this folder
+**/~/
+.DS_Store
+
+# JetBrains Rider
+.idea/
+*.sln.iml
