@@ -18,10 +18,10 @@ export class BackgroundWorkflowService implements IWorkflowService {
 
     public openPopUpWindow(item: IProcessSession): void {
         const clientUrl = Xrm.Utility.getGlobalContext().getClientUrl()
-        
+
         const url = clientUrl +
             `/tools/workflowinstance/edit.aspx?id={${item.id}}&_CreateFromType=2&_CreateFromId=%7b25A45522-80B4-EA11-A812-000D3A26D722%7d`
-        
+
         window.open(url, '_blank')
     }
 
@@ -42,5 +42,4 @@ export class BackgroundWorkflowService implements IWorkflowService {
             }))
             .filter(entity => entity.name !== '')
     }
-
 }

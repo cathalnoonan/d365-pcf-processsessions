@@ -18,7 +18,7 @@ export class RealTimeWorkflowService implements IWorkflowService {
 
     public openPopUpWindow(item: IProcessSession): void {
         const clientUrl = Xrm.Utility.getGlobalContext().getClientUrl()
-        
+
         const url = clientUrl +
             `/sfa/workflowsession/edit.aspx?id={${item.id}}&_CreateFromType=2&_CreateFromId=%7b25A45522-80B4-EA11-A812-000D3A26D722%7d`
 
@@ -41,5 +41,4 @@ export class RealTimeWorkflowService implements IWorkflowService {
                 status: entity['statuscode@OData.Community.Display.V1.FormattedValue'] || '',
             }))
     }
-
 }

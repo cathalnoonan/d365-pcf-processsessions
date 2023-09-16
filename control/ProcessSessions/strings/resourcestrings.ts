@@ -30,7 +30,7 @@ export class ResourceStrings {
     get CompletedOn(): string {
         return this.getString('CompletedOn_Key')
     }
-    get PleaseSaveAndRefresh(): string { 
+    get PleaseSaveAndRefresh(): string {
         return this.getString('PleaseSaveAndRefresh_Key')
     }
 

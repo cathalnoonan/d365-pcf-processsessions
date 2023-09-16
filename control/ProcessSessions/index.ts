@@ -19,7 +19,7 @@ export class ProcessSessions implements ComponentFramework.StandardControl<IInpu
         this.assignEntityReference(context)
         this.resourceStrings = new ResourceStrings(context)
     }
-    
+
     public updateView(context: ComponentFramework.Context<IInputs>): void {
         this.assignEntityReference(context)
         this.render()
@@ -56,5 +56,4 @@ export class ProcessSessions implements ComponentFramework.StandardControl<IInpu
 
         return new RealTimeWorkflowService(this.entityTypeName, this.entityId, context, this.resourceStrings)
     }
-
 }
