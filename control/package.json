@@ -1,5 +1,5 @@
 {
-  "name": "pcf-processsessions",
+  "name": "d365-pcf-processsessions",
   "version": "2.0.0",
   "license": "MIT",
   "scripts": {

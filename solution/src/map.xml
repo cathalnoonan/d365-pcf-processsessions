@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mapping>
+  <!-- PCF source map -->
+  <FileToFile
+    map="WebResources/cc_Cathal.ProcessSessions/bundle.js.map"
+    to="../../../../control/out/controls/ProcessSessions/bundle.js.map" />
+</Mapping>
