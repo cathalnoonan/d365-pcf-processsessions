@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest>
-  <control namespace="Cathal" constructor="ProcessSessions" display-name-key="ProcessSessions_Display_Key" description-key="ProcessSessions_Desc_Key" control-type="standard" version="2.0.2">
+  <control namespace="Cathal" constructor="ProcessSessions" display-name-key="ProcessSessions_Display_Key" description-key="ProcessSessions_Desc_Key" control-type="standard" version="2.0.3">
     <property name="field" display-name-key="Field_Display_Key" description-key="Field_Desc_Key" of-type-group="any" usage="bound" required="true" />
     <!-- Entity reference parameters -->
     <property name="entityId" display-name-key="entityId_Display_Key" description-key="entityId_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
@@ -42,8 +42,8 @@
     </property>
     <resources>
       <code path="index.ts" order="1" />
-      <resx path="strings/ProcessSessions.1030.resx" version="2.0.2" />
-      <resx path="strings/ProcessSessions.1033.resx" version="2.0.2" />
+      <resx path="strings/ProcessSessions.1030.resx" version="2.0.3" />
+      <resx path="strings/ProcessSessions.1033.resx" version="2.0.3" />
     </resources>
     <feature-usage>
       <uses-feature name="Utility" required="true" />
